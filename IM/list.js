@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         IMW List Debugger
+// @name         IMW/BIS Debugger
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  shows how to use babel compiler
@@ -19,14 +19,14 @@ var inline_src = (<><![CDATA[
         $list.on('jqGridAfterGridComplete', function(){
             $list.find('input[type=hidden]').each(function() {
                 let $self = $(this);
-                $self.nextAll('input[type=text]').remove();
-                $self.after($self.clone(true).attr('type', 'text').mouseover(function(){
+                $self.parent().find('.tm').remove();
+                $self.parent().prepend($self.clone(true).attr('type', 'text').addClass('tm').mouseover(function(){
                     $(this).select();
                 }));
             });
         });
     });
-    //# sourceURL=http://tamper/im/list.js
+    //# sourceURL=us.js
 /* jshint ignore:start */
 ]]></>).toString();
 var c = babel.transform(inline_src);
