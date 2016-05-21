@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         IMW/BIS Debugger
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/madobon/MyTamperMonkey
 // @version      0.1
 // @description  shows how to use babel compiler
 // @author       madobon
